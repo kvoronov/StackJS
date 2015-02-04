@@ -16,36 +16,24 @@ var storage = {
             password: 'abc'
         }
     },
-    sessions: []
+    devices: {
+        device1: {
+            type: 'emergency',
+            userId: 'id1'
+        }
+    }
 };
 
 // Object implementing database interface
 var database = {
 
-    sessions: {
-        // Creates session using userId(userId is the same as login)
-        // id of created session returns to callback
-        create: function(userId, callback){
-            database.users.getById(userId, function(err, user){
-                if(err) {
-                    callback(err);
-                } else {
-                    storage.sessions.push({
-                        sessionId: storage.sessions.length.toString(),
-                        userId: userId
-                    });
-                    callback(null,
-                        storage.sessions[storage.sessions.length-1].sessionId);
-                }
-            });
-        },
-        // get session object by sessionId or error if session is invalid
-        getById: function(sessionId, callback){
-            if(storage.sessions[sessionId]) {
-                callback(null, storage.sessions[sessionId]);
+    devices: {
+        getById: function(deviceId, callback){
+            if(storage.devices[deviceId]) {
+                callback(null, storage.devices[deviceId]);
             } else {
                 callback({
-                    error: "Invalid session"
+                    error: "Unknown device"
                 });
             }
         }
