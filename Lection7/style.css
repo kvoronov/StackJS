@@ -1,0 +1,23 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+    background: #aaaaaa;
+    border-radius: 0 0 10px 10px;
+    border: 1px solid #888888;
+    position: absolute;
+    width: 98%;
+    left: 0;
+    top: 0;
+    height: 20px;
+    font-size: 20px;
+    padding: 5px;
+    margin: 0 0 1% 1%;
+}
+
+.main {
+    top: 10vh;
+    position: absolute;
+    margin: 0 0 1% 1%;
+}

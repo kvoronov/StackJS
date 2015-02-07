@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "mongojs": "^0.18.1"
+  }
+}
